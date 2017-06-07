@@ -61,6 +61,7 @@ class CAE_3D(object):
 
         synthesis_input = np.random.rand(1, self.image_size[0], self.image_size[1], self.image_size[2], 1);
         samples = self.sess.run(self.reconstructed, feed_dict={self.input_image: synthesis_input});
+        print "samples shape ", samples.shape;
         print samples[0, 1:3, 1:3, 1:3, 0];
 
 
