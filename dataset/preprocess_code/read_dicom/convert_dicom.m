@@ -31,23 +31,28 @@ for i_dicom = 1:no_sample
     
     list_msk_file = list_bare_files(msk_fold);
     msk_file = fullfile(msk_fold, list_msk_file{1});
-    hdr = dicominfo(fullfile(msk_file));
-    if strcmp(hdr.Modality, 'RTSTRUCT')
-        fprintf('Converting %s\n', dicom_name);
-        %files_out = [files_out dicomrt2matlab(fullfile(directory, files(f).name))];
-        seg_map = dicomrt2matlab_v2(msk_file, img_fold);
+
+	try
+    	hdr = dicominfo(fullfile(msk_file));
+    	if strcmp(hdr.Modality, 'RTSTRUCT')
+        	fprintf('Converting %s\n', dicom_name);
+        	%files_out = [files_out dicomrt2matlab(fullfile(directory, files(f).name))];
+        	seg_map = dicomrt2matlab_v2(msk_file, img_fold);
         
-        % Convert and Save image block
-        saved_img_block = convertImg(img_fold, seg_map.imageheaders);
+        	% Convert and Save image block
+        	saved_img_block = convertImg(img_fold, seg_map.imageheaders);
         
-        img = saved_img_block;
-        segmentation = seg_map.contours.Segmentation;
+			img = saved_img_block;
+			segmentation = seg_map.contours.Segmentation;
+		
+			save(fullfile(des_dir, ['img_' num2str(i_dicom) '.mat']), 'img');
+			save(fullfile(des_dir, ['msk_' num2str(i_dicom) '.mat']), 'segmentation');
+			dict{i_dicom} = [dicom_name ' ' num2str(i_dicom)];
         
-        save(fullfile(des_dir, ['img_' num2str(i_dicom) '.mat']), 'img');
-        save(fullfile(des_dir, ['msk_' num2str(i_dicom) '.mat']), 'segmentation');
-        dict{i_dicom} = [dicom_name ' ' num2str(i_dicom)];
-        
-    end
+		end
+	catch
+		disp(['Error ' dicom_name]); 
+	end
 end
 
 %delete(gcp);

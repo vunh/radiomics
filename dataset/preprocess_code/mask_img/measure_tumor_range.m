@@ -1,8 +1,7 @@
 % Using mask to extract tumor
-function measure_tumor_range()
+function max_measures = measure_tumor_range(src_dir)
 
-src_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_60';
-%des_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_60_tumor';
+%src_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_60';
 
 files = dir(fullfile(src_dir, 'msk_*.mat'));
 files = {files.name};
@@ -32,6 +31,8 @@ max_width = max(box(:,2));
 min_width = min(box(:,2));
 max_depth = max(box(:,3));
 min_depth = min(box(:,3));
+
+max_measures = [ceil(max_height), ceil(max_width), ceil(max_depth)];
 
 disp(sprintf('max_height %d, min_height %d, max_width %d, min_width %d, max_depth %d, min_depth %d', ceil(max_height), ceil(min_height), ceil(max_width), ceil(min_width), ceil(max_depth), ceil(min_depth)));
 

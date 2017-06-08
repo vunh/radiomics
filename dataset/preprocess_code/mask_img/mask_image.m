@@ -8,7 +8,8 @@ max_height = 119;
 max_width = 148;
 max_depth = 48;
 
-max_dimension = [117, 146];
+max_dimension = measure_tumor_range(src_dir);
+max_dimension = max_dimension(1:2);
 pad_dimension = [0, 0];
 max_dimension = max_dimension + pad_dimension;
 standard_dimension = [128, 128, 64];
