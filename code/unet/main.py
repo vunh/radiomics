@@ -8,16 +8,25 @@ import tensorflow as tf
 
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--dataset_name', dest='dataset_name', default='facades', help='name of the dataset')
-
+parser.add_argument('--lr', dest='lr', type=float, default=0.0002, help='initial learning rate for adam')
+parser.add_argument('--beta1', dest='beta1', type=float, default=0.5, help='momentum term of adam')
+parser.add_argument('--epoch', dest='epoch', type=int, default=200, help='# of epoch')
+parser.add_argument('--batch_size', dest='batch_size', type=int, default=1, help='# images in batch')
 
 args = parser.parse_args()
 
 
 def main(_):
-    with tf.Session() as sess:
+    os.environ['CUDA_VISIBLE_DEVICES'] = str(0)
+
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+
+    with tf.Session(config=config) as sess:
+    #with tf.Session() as sess:
         model = CAE_3D(sess);
 
-        model.test();
+        model.train(args);
 
 
 
