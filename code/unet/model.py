@@ -18,7 +18,7 @@ class CAE_3D(object):
         self.batch_size = 1;
         self.image_size = [64, 128, 128, 1];      # [depth, height, width, channel]
 
-        self.training_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_60_tumor';
+        self.training_dir_list = ['/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_60_tumor', '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_61_180_tumor'];
 
         self.build_model();
 
@@ -96,13 +96,24 @@ class CAE_3D(object):
 
 
     def load_training_data(self):
-        self.training_dir;
+        X_train = np.zeros(shape=(0, self.image_size[0], self.image_size[1], self.image_size[2], self.image_size[3]), dtype = np.float32);
+        for training_folder in self.training_dir_list:
+            X_tr = self.load_training_data_folder(training_folder);
+            X_train = np.concatenate((X_train, X_tr));
 
+        mu = np.mean(X_train[0::1, :, :, :].flatten());
+        sigma = np.std(X_train[0::1, :, :, :].flatten());
+        print "mu, sigma: ", mu, sigma;
+        X_train = (X_train - mu) / sigma;
+
+        self.X_train = X_train;
+        print "X_train shape: ", self.X_train.shape;
+
+    def load_training_data_folder(self, folder):
         X_train = np.zeros(shape=(400, self.image_size[0], self.image_size[1], self.image_size[2], self.image_size[3]), dtype = np.float32);
-        print "X_train shape: ", X_train.shape;
         
         idx = 0;
-        for file_name in glob.glob(self.training_dir + '/*.mat'):
+        for file_name in glob.glob(folder + '/*.mat'):
             loaded = sio.loadmat(file_name);
             img = loaded['norm_tumor'];
             img = np.transpose(img, (2, 0, 1));
@@ -110,12 +121,8 @@ class CAE_3D(object):
             idx += 1;
 
         X_train = X_train[:idx];
-        mu = np.mean(X_train[0::int(floor(X_train.shape[0]/1)), :, :, :].flatten());
-        sigma = np.std(X_train[0::int(floor(X_train.shape[0]/1)), :, :, :].flatten());
-        print "mu, sigma: ", mu, sigma;
-        X_train = (X_train - mu) / sigma;
 
-        self.X_train = X_train;
+        return X_train;
 
 
     def test(self):
