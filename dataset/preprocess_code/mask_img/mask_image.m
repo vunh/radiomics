@@ -40,8 +40,11 @@ for i = 1:length(files)
 	end
 	
 	% Crop tumor
-	top_left = stats(1).BoundingBox(1:3);
-	bottom_right = top_left + stats(1).BoundingBox(4:6);
+	top_left = [stats(1).BoundingBox(2) stats(1).BoundingBox(1) stats(1).BoundingBox(3)];
+	width = [stats(1).BoundingBox(5) stats(1).BoundingBox(4) stats(1).BoundingBox(6)];
+	bottom_right = top_left + width;
+	%top_left = stats(1).BoundingBox(1:3);
+	%bottom_right = top_left + stats(1).BoundingBox(4:6);
 	
 	top_left = floor(top_left);
 	bottom_right = ceil(bottom_right);
@@ -81,7 +84,7 @@ img_new_size = floor([img_size(1:2)*scale img(3)]);
 img_new_size = min(img_new_size, standard_dimension);
 res = zeros(img_new_size);
 for i = 1:depth
-	slice = imresize(img(:,:,i), img_new_size(1:2));
+	slice = imresize(img(:,:,i), img_new_size(1:2), 'nearest');
 	res(:,:,i) = slice;
 end
 
