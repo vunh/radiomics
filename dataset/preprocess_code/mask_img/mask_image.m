@@ -65,7 +65,7 @@ for i = 1:length(files)
 
 	norm_tumor = new_img;
 
-	save(fullfile(des_dir, img_name), 'norm_tumor');
+	save(fullfile(des_dir, img_name), 'norm_tumor', 'scale');
 end
 
 end
