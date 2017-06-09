@@ -1,14 +1,16 @@
 % Using mask to extract tumor
 function mask_image()
 
-src_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_60';
-des_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_60_tumor';
+src_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_61_180';
+des_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_61_180_tumor';
 
 max_height = 119;
 max_width = 148;
 max_depth = 48;
 
-max_dimension = measure_tumor_range(src_dir);
+%max_dimension = measure_tumor_range(src_dir);
+max_dimension = [max_height, max_width, max_depth];
+
 max_dimension = max_dimension(1:2);
 pad_dimension = [0, 0];
 max_dimension = max_dimension + pad_dimension;
