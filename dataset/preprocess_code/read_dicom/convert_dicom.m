@@ -1,7 +1,7 @@
 function convert_dicom()
 
-src_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/NSCLC-Radiomics';
-des_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_61_180';
+src_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_181_422_raw';
+des_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_181_422';
 
 
 dicom_fold = list_bare_folders(src_dir);

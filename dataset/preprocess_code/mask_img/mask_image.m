@@ -1,12 +1,15 @@
 % Using mask to extract tumor
 function mask_image()
 
-src_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_61_180';
-des_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_61_180_tumor';
+src_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_181_422';
+des_dir = '/nfs/bigbrain/vhnguyen/projects/radiomics/dataset/nsclc_181_422_tumor';
 
-max_height = 119;
-max_width = 148;
-max_depth = 48;
+max_height = 137;
+max_width = 152;
+max_depth = 53;
+
+% This is for aligning 
+aligning_value = 1024;
 
 %max_dimension = measure_tumor_range(src_dir);
 max_dimension = [max_height, max_width, max_depth];
@@ -33,6 +36,8 @@ for i = 1:length(files)
 	img = img.img;
 	msk = msk.segmentation;
 	neg_msk = ~msk;
+
+	img = align_img_value(img, aligning_value);
 
 	img(neg_msk) = 0;
 
@@ -92,6 +97,13 @@ for i = 1:depth
 end
 
 
+end
+
+function aligned_img = align_img_value(img, aligning_value)
+aligned_img = img;
+if (min(img(:)) < -10)
+	aligned_img = aligned_img + aligning_value;
+end
 end
 
 
