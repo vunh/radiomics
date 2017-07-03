@@ -1,0 +1,71 @@
+2017-06-08 21:10:59.785835: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-08 21:10:59.785938: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-08 21:10:59.785952: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-08 21:11:00.066271: I tensorflow/core/common_runtime/gpu/gpu_device.cc:887] Found device 0 with properties: 
+name: GeForce GTX TITAN Black
+major: 3 minor: 5 memoryClockRate (GHz) 0.98
+pciBusID 0000:02:00.0
+Total memory: 5.94GiB
+Free memory: 5.87GiB
+2017-06-08 21:11:00.066329: I tensorflow/core/common_runtime/gpu/gpu_device.cc:908] DMA: 0 
+2017-06-08 21:11:00.066341: I tensorflow/core/common_runtime/gpu/gpu_device.cc:918] 0:   Y 
+2017-06-08 21:11:00.066366: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX TITAN Black, pci bus id: 0000:02:00.0)
+e7  (1, 1, 1, 1, 512)
+d2, e4  (1, 4, 4, 4, 256) (1, 8, 8, 8, 256)
+d7  (1, 64, 128, 128, 1)
+Begin loading data
+mu, sigma:  6.31215 92.9947
+X_train shape:  (166, 64, 128, 128, 1)
+Finish loading data
+ [*] Reading checkpoint...
+ [*] Load SUCCESS
+Epoch 0 - Loss 0.0344 
+Epoch 1 - Loss 0.0285 
+Epoch 2 - Loss 0.0277 
+Epoch 3 - Loss 0.0250 
+Epoch 4 - Loss 0.0237 
+Epoch 5 - Loss 0.0245 
+Epoch 6 - Loss 0.0212 
+Epoch 7 - Loss 0.0206 
+Epoch 8 - Loss 0.0203 
+Epoch 9 - Loss 0.0193 
+Epoch 10 - Loss 0.0189 
+Epoch 11 - Loss 0.0172 
+Epoch 12 - Loss 0.0175 
+Epoch 13 - Loss 0.0171 
+Epoch 14 - Loss 0.0165 
+Epoch 15 - Loss 0.0161 
+Epoch 16 - Loss 0.0156 
+Epoch 17 - Loss 0.0158 
+Epoch 18 - Loss 0.0154 
+Epoch 19 - Loss 0.0153 
+Epoch 20 - Loss 0.0148 
+Epoch 21 - Loss 0.0147 
+Epoch 22 - Loss 0.0152 
+Epoch 23 - Loss 0.0148 
+Epoch 24 - Loss 0.0141 
+Epoch 25 - Loss 0.0141 
+Epoch 26 - Loss 0.0139 
+Epoch 27 - Loss 0.0137 
+Epoch 28 - Loss 0.0140 
+Epoch 29 - Loss 0.0136 
+Epoch 30 - Loss 0.0136 
+Epoch 31 - Loss 0.0133 
+Epoch 32 - Loss 0.0128 
+Epoch 33 - Loss 0.0130 
+Epoch 34 - Loss 0.0133 
+Epoch 35 - Loss 0.0133 
+Epoch 36 - Loss 0.0126 
+Epoch 37 - Loss 0.0129 
+Epoch 38 - Loss 0.0128 
+Epoch 39 - Loss 0.0125 
+Epoch 40 - Loss 0.0130 
+Epoch 41 - Loss 0.0117 
+Epoch 42 - Loss 0.0118 
+Epoch 43 - Loss 0.0118 
+Epoch 44 - Loss 0.0118 
+Epoch 45 - Loss 0.0119 
+Epoch 46 - Loss 0.0122 
+Epoch 47 - Loss 0.0116 
+Epoch 48 - Loss 0.0115 
+Epoch 49 - Loss 0.0121 

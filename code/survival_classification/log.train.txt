@@ -1,0 +1,131 @@
+2017-06-20 06:57:16.373305: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-20 06:57:16.373404: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-20 06:57:16.373426: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-06-20 06:57:16.619774: I tensorflow/core/common_runtime/gpu/gpu_device.cc:887] Found device 0 with properties: 
+name: GeForce GTX TITAN Black
+major: 3 minor: 5 memoryClockRate (GHz) 0.98
+pciBusID 0000:03:00.0
+Total memory: 5.94GiB
+Free memory: 5.87GiB
+2017-06-20 06:57:16.619833: I tensorflow/core/common_runtime/gpu/gpu_device.cc:908] DMA: 0 
+2017-06-20 06:57:16.619845: I tensorflow/core/common_runtime/gpu/gpu_device.cc:918] 0:   Y 
+2017-06-20 06:57:16.619867: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX TITAN Black, pci bus id: 0000:03:00.0)
+fc1 dim  (1, 1, 1, 1, 512)
+Output dim  (1, 1, 1, 1, 1)
+No. of trained vars:  10
+generator/g_conv1/w:0
+generator/g_conv1/biases:0
+generator/g_conv2/w:0
+generator/g_conv2/biases:0
+generator/g_conv3/w:0
+generator/g_conv3/biases:0
+generator/g_fc1/w:0
+generator/g_fc1/biases:0
+generator/g_fc2/w:0
+generator/g_fc2/biases:0
+Begin loading data
+mu, sigma:  0.0351292 0.29564
+maxX, minX:  7.88998 0.0
+Finish loading data
+ [*] Reading checkpoint...
+ [!] Load failed...
+No. traning data:  364 364
+Validation 0.16996035
+Epoch 0 - Loss 0.19238483 
+Validation 0.13762222
+Epoch 1 - Loss 0.08656858 
+Validation 0.11024193
+Epoch 2 - Loss 0.08041156 
+Validation 0.11337093
+Epoch 3 - Loss 0.07662673 
+Validation 0.11353015
+Epoch 4 - Loss 0.07101419 
+Validation 0.15365113
+Epoch 5 - Loss 0.06503882 
+Validation 0.10818549
+Epoch 6 - Loss 0.06278402 
+Validation 0.13231525
+Epoch 7 - Loss 0.05944813 
+Validation 0.11715914
+Epoch 8 - Loss 0.05648306 
+Validation 0.10868185
+Epoch 9 - Loss 0.05387325 
+Validation 0.14156246
+Epoch 10 - Loss 0.04920924 
+Validation 0.12103443
+Epoch 11 - Loss 0.04557342 
+Validation 0.13154547
+Epoch 12 - Loss 0.04279352 
+Validation 0.11938145
+Epoch 13 - Loss 0.04117123 
+Validation 0.12194560
+Epoch 14 - Loss 0.04109871 
+Validation 0.12501088
+Epoch 15 - Loss 0.03765732 
+Validation 0.10841549
+Epoch 16 - Loss 0.03367672 
+Validation 0.11061018
+Epoch 17 - Loss 0.03274677 
+Validation 0.11395231
+Epoch 18 - Loss 0.03026050 
+Validation 0.12960663
+Epoch 19 - Loss 0.02764897 
+Validation 0.11116043
+Epoch 20 - Loss 0.02743861 
+Validation 0.11390232
+Epoch 21 - Loss 0.02885067 
+Validation 0.13252672
+Epoch 22 - Loss 0.02547855 
+Validation 0.11726107
+Epoch 23 - Loss 0.02384031 
+Validation 0.11914134
+Epoch 24 - Loss 0.02446244 
+Validation 0.11531483
+Epoch 25 - Loss 0.02407048 
+Validation 0.11185462
+Epoch 26 - Loss 0.02222751 
+Validation 0.11437262
+Epoch 27 - Loss 0.02336398 
+Validation 0.12017321
+Epoch 28 - Loss 0.02065495 
+Validation 0.10976204
+Epoch 29 - Loss 0.02049765 
+Validation 0.11979143
+Epoch 30 - Loss 0.02081594 
+Validation 0.11220954
+Epoch 31 - Loss 0.02045088 
+Validation 0.11273823
+Epoch 32 - Loss 0.01957365 
+Validation 0.10862108
+Epoch 33 - Loss 0.02059148 
+Validation 0.11957934
+Epoch 34 - Loss 0.02039851 
+Validation 0.10856363
+Epoch 35 - Loss 0.01859406 
+Validation 0.12104212
+Epoch 36 - Loss 0.01928293 
+Validation 0.10713575
+Epoch 37 - Loss 0.01957090 
+Validation 0.10883095
+Epoch 38 - Loss 0.01963733 
+Validation 0.11722454
+Epoch 39 - Loss 0.01810776 
+Validation 0.11631813
+Epoch 40 - Loss 0.01783580 
+Validation 0.10833385
+Epoch 41 - Loss 0.01825330 
+Validation 0.11904875
+Epoch 42 - Loss 0.01744033 
+Validation 0.12043247
+Epoch 43 - Loss 0.01800528 
+Validation 0.11236996
+Epoch 44 - Loss 0.01633453 
+Validation 0.11729484
+Epoch 45 - Loss 0.01792901 
+Validation 0.11298057
+Epoch 46 - Loss 0.01711129 
+Validation 0.11694610
+Epoch 47 - Loss 0.01718409 
+Validation 0.10675092
+Epoch 48 - Loss 0.01625884 
+Validation 0.11562371
